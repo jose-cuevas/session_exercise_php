@@ -1,5 +1,12 @@
 <?php
+    require_once("./modules/session_functions.php");
+    checkSession();
 
+    // $email = $_SESSION['email'];
+    // $emailUserName = strstr($email, "@", true);
+    
+
+    // $emailUserName = "sdfsdf@io.dev";
 ?>
 
 
@@ -16,7 +23,7 @@
     <title>Panel log in</title>
 </head>
 <body class="bg-light">
-    <h1 class="container-fluid p-5 bg-primary text-white"> Hi  Welcome to panel php</h1>
+    <h1 class="container-fluid p-5 bg-primary text-white"> Hi <?= strstr($_SESSION["email"], '@', true) ?>, welcome to this site</h1>
     <div class="d-grid gap-2 col-6 mx-auto">
         <p>Laborum dolor cillum tempor deserunt anim mollit nostrud dolore cupidatat quis ullamco do. Consequat elit quis proident nulla laboris aute cillum proident quis nulla velit sunt proident officia. Fugiat adipisicing laborum in anim exercitation ad qui. Amet officia deserunt officia nisi sit dolore nisi proident proident aliquip enim mollit aliqua adipisicing. Labore quis voluptate aliquip non commodo. Nulla laboris eiusmod laboris veniam cillum proident adipisicing magna veniam ea anim.</p>
 
@@ -27,7 +34,7 @@
 
 
 
-        <button type="submit" class="btn btn-primary btn-lg">Log Out</button>
+        <a class="btn btn-primary btn-lg" href="./modules/close_session.php">Log Out</a>
     </div>
 
 

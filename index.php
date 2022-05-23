@@ -22,6 +22,8 @@
     <input name="password" type="password" class="form-control" id="exampleInputPassword1">
   </div>
   
+  <!-- <?= ($alert) ? "<div class='alert alert-$alert[type] role='alert'>$alert[text]</div>" : "" ?> -->
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
     
