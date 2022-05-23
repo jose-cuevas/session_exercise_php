@@ -9,21 +9,15 @@ function authUser(){
 
 // get $_POST variablesfrom the form
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    // echo $email;
+    $password = $_POST['password'];     
 
     // Validate if user is in our fake data base and redirect the user
     if (checkUser($email, $password)){
-        $_SESSION['email'] = $email;
-        // echo $email;
-        
+        $_SESSION['email'] = $email;   
         header("Location:../panel.php");
     }else{
         $_SESSION['loginError'] = "Wrong email or password";
-        
-        header("Location:../index.php");
-        
+        header("Location:../index.php");        
     }
 };
 
@@ -31,8 +25,7 @@ function authUser(){
 function checkUser($email, $password){    
     // "Fake" Data Base
     $emailDb = "jose@gmail.com";
-    $passwordDb = "123";
-    // echo $email;
+    $passwordDb = "123";    
 
     // Encrypt the password (in a database passwords always encripted)
     $passwordEnc = password_hash($passwordDb, PASSWORD_DEFAULT);
@@ -46,37 +39,18 @@ function checkUser($email, $password){
 //----------------------------------
 // Check Session on Panel PHP
 function checkSession(){
-    session_start();
-    // echo "works";
-    // echo $_SESSION['email']. "<br>";
+    session_start();    
 
-    
-    
-    // echo $_SERVER['REQUEST_URI']. "<br>";
-    // echo $_SERVER['QUERY_STRING']. "<br>";
-
-    $urlFile = basename($_SERVER['REQUEST_URI']);
-    // echo $urlFile . "<br>";
+    $urlFile = basename($_SERVER['REQUEST_URI']);    
 
     if ($urlFile === 'index.php'){
         if (isset($_SESSION['email'])){
             header('Location:../panel.php');
-        } else{
-            // ERRORS
-            // checkLoginError()
-            // checkLogout ()
-        
-            if ($alert = checkLoginError()) return $alert;
-            // if ($alert = checkLogout()) return $alert;
-        }
-        
+        } else if ($alert = checkLoginError()) return $alert;     
+      
     }
-    //  else if (!isset($_SESSION["email"])) {
-    //         $_SESSION["loginError"] = "You don't have permission to enter the dashboard. Please Login.";
-    //         header("Location:./index.php");
-    //     }
+    
     }
-
 
 function checkLoginError(){    
         if (isset($_SESSION["loginError"])) {
@@ -87,9 +61,6 @@ function checkLoginError(){
     }
 
     
-
-
-
 //----------------------------------
 //----------------------------------
 // Close Session - Log Out
