@@ -21,8 +21,9 @@ function authUser(){
         header("Location:../panel.php");
     }else{
         $_SESSION['loginError'] = "Wrong email or password";
-        // echo $_SESSION['loginError'];
+        
         header("Location:../index.php");
+        
     }
 };
 
@@ -55,30 +56,29 @@ function checkSession(){
     // echo $_SERVER['QUERY_STRING']. "<br>";
 
     $urlFile = basename($_SERVER['REQUEST_URI']);
-    echo $urlFile . "<br>";
+    // echo $urlFile . "<br>";
 
     if ($urlFile === 'index.php'){
         if (isset($_SESSION['email'])){
-            header('Localitation:../panel.php');
+            header('Location:../panel.php');
         } else{
             // ERRORS
             // checkLoginError()
             // checkLogout ()
         
-        if (checkLoginError()) return $alert;
-
-        if (checkLogout()) return $alert;
+            if ($alert = checkLoginError()) return $alert;
+            // if ($alert = checkLogout()) return $alert;
+        }
+        
     }
-    } else {
-        if (!isset($_SESSION["email"])) {
+     else if (!isset($_SESSION["email"])) {
             $_SESSION["loginError"] = "You don't have permission to enter the dashboard. Please Login.";
             header("Location:./index.php");
         }
     }
-};
 
-function checkLoginError(){
-    
+
+function checkLoginError(){    
         if (isset($_SESSION["loginError"])) {
             $errorText = $_SESSION["loginError"];
             unset($_SESSION["loginError"]);
