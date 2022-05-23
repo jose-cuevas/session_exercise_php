@@ -24,7 +24,7 @@
 </head>
 <body class="bg-light">
     <h1 class="container-fluid p-5 bg-primary text-white"> Hi <?= strstr($_SESSION["email"], '@', true) ?>, welcome to this site</h1>
-    <div class="d-grid gap-2 col-6 mx-auto">
+    <div class="d-grid gap-2 col-6 mx-auto m-4">
         <p>Laborum dolor cillum tempor deserunt anim mollit nostrud dolore cupidatat quis ullamco do. Consequat elit quis proident nulla laboris aute cillum proident quis nulla velit sunt proident officia. Fugiat adipisicing laborum in anim exercitation ad qui. Amet officia deserunt officia nisi sit dolore nisi proident proident aliquip enim mollit aliqua adipisicing. Labore quis voluptate aliquip non commodo. Nulla laboris eiusmod laboris veniam cillum proident adipisicing magna veniam ea anim.</p>
 
         <p>Nulla et et id non sint in mollit reprehenderit sint eu. Consectetur reprehenderit excepteur voluptate sit sit laborum duis anim. Ipsum officia nisi est eiusmod voluptate fugiat id velit dolor nisi excepteur. Exercitation do tempor eiusmod esse culpa deserunt ut incididunt voluptate eu consequat proident. Anim reprehenderit incididunt nostrud officia.</p>
@@ -34,7 +34,7 @@
 
 
 
-        <a class="btn btn-primary btn-lg" href="./modules/close_session.php">Log Out</a>
+        <a class="btn btn-primary btn-lg mt-2" href="./modules/close_session.php">Log Out</a>
     </div>
 
 

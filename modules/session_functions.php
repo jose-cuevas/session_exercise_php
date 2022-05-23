@@ -71,10 +71,10 @@ function checkSession(){
         }
         
     }
-     else if (!isset($_SESSION["email"])) {
-            $_SESSION["loginError"] = "You don't have permission to enter the dashboard. Please Login.";
-            header("Location:./index.php");
-        }
+    //  else if (!isset($_SESSION["email"])) {
+    //         $_SESSION["loginError"] = "You don't have permission to enter the dashboard. Please Login.";
+    //         header("Location:./index.php");
+    //     }
     }
 
 
